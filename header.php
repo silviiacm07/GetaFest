@@ -59,7 +59,7 @@
             margin: 20px 0;
         }
 
-        /* Estilos para etiquetas y campos */
+        /* Estilos para campos */
         label {
             display: block;
             margin-top: 15px;
@@ -93,7 +93,7 @@
             width: 100%;
         }
 
-        /* Radios y checkboxes */
+        /* Checkboxes */
         input[type="radio"],
         input[type="checkbox"] {
             margin-right: 8px;
@@ -125,7 +125,7 @@
             filter: brightness(1.2);
         }
 
-        /* Tarjeta de resultado */
+        /* Tarjeta final */
         .profile-card {
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -181,6 +181,11 @@
 
         .dia-item label {
             margin: 0;
+        }
+
+        .radio-label {
+            display: inline;
+            font-weight: normal;
         }
 
         @keyframes fadeIn {

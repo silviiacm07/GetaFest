@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
     exit;
 }
 
-// Recogemos los datos
+// Datos
 $nombre = $_POST['nombre'];
 $email = $_POST['email'];
 $edad = $_POST['edad'];
@@ -18,7 +18,7 @@ $dias = $_POST['dias'] ?? [];
 $pago = $_POST['pago'];
 $observaciones = $_POST['observaciones'];
 
-// 2. Validación de edad (mayores de 18)
+// Mayores de 18
 if ($edad < 18) {
     echo "<h3>Acceso denegado</h3>";
     echo "<p>Lo sentimos, el evento es exclusivo para mayores de edad.</p>";
@@ -27,7 +27,7 @@ if ($edad < 18) {
     exit;
 }
 
-// 3. Subida de la foto y creación automática de la carpeta images/ si no existe
+// Subida foto y creación carpeta, si no existe
 $nombre_foto = $_FILES['foto']['name'];
 $ruta_temporal = $_FILES['foto']['tmp_name'];
 $carpeta_destino = "images/";
@@ -42,7 +42,7 @@ if (is_uploaded_file($ruta_temporal)) {
     move_uploaded_file($ruta_temporal, $ruta_destino);
 }
 
-// 4. Cálculo de la tarifa
+//Cálculo precio
 $precio_base = 0;
 if ($tipo_entrada == "General") {
     $precio_base = 50;
@@ -55,12 +55,12 @@ if ($tipo_entrada == "General") {
 $suplemento_dias = count($dias) * 10;
 $precio_total = $precio_base + $suplemento_dias;
 
-// 5. Generación del pase digital / ticket
+// Acreditación digital
 ?>
 
 <h2>Acreditación Digital</h2>
 
-<!-- LA FOTO QUEDA AQUÍ ARRIBA: Entre el título y la barra, centrada -->
+
 <img src="<?php echo $ruta_destino; ?>" class="profile-img" alt="Foto perfil">
 
 <hr>
@@ -86,10 +86,10 @@ $precio_total = $precio_base + $suplemento_dias;
 <h3 style="margin-top: 20px;">Precio Total a Pagar: <?php echo $precio_total; ?> €</h3>
 
 <br>
-<!-- Botón estilizado -->
+
 <a href="index.php" class="btn">Realizar otra inscripción</a>
 
 </div>
-</div> <!-- Cierra .container -->
+</div>
 </body>
 </html>

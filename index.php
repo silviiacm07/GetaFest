@@ -1,14 +1,12 @@
 <?php
-// Incluimos la cabecera
 include 'header.php';
 ?>
 
     <h2>GetaFest🎉</h2>
 
-    <!-- ¡Ojo aquí! method="POST" y enctype para los archivos obligatorios -->
     <form action="procesar.php" method="POST" enctype="multipart/form-data">
 
-        <!-- DATOS PERSONALES -->
+        <!-- DATOS DEL PASE -->
         <label for="nombre">Nombre y Apellidos:</label>
         <input type="text" id="nombre" name="nombre" required>
 
@@ -19,17 +17,17 @@ include 'header.php';
         <input type="number" id="edad" name="edad" min="1" max="120" required>
 
 
-        <!-- CONFIGURACIÓN DEL PASE -->
+<!--        ENTRADA-->
         <label>Tipo de entrada (Elige una):</label><br>
+
         <input type="radio" id="general" name="tipo_entrada" value="General" required>
-        <label for="general" style="display:inline; font-weight:normal;">General (50 €)</label><br>
+        <label for="general" class="radio-label">General (50 €)</label><br>
 
         <input type="radio" id="vip" name="tipo_entrada" value="VIP">
-        <label for="vip" style="display:inline; font-weight:normal;">VIP con acceso a Backstage (120 €)</label><br>
+        <label for="vip" class="radio-label">VIP con acceso a Backstage (120 €)</label><br>
 
         <input type="radio" id="supervip" name="tipo_entrada" value="SuperVIP">
-        <label for="supervip" style="display:inline; font-weight:normal;">Super VIP + Camping (180 €)</label><br><br>
-
+        <label for="supervip" class="radio-label">Super VIP + Camping (180 €)</label><br>
 
 
         <label>Días de asistencia (Puedes marcar varios):</label>
@@ -52,6 +50,7 @@ include 'header.php';
         </div>
 
 
+<!--        METODO DE PAGO-->
         <label for="pago">Método de pago:</label>
         <select id="pago" name="pago" required>
             <option value="">-- Selecciona una opción --</option>
@@ -66,7 +65,7 @@ include 'header.php';
         <input type="file" id="foto" name="foto" accept="image/*" required>
 
 
-        <!-- OBSERVACIONES -->
+        <!-- OBSERVACIÓN -->
         <label for="observaciones">Observaciones o peticiones especiales:</label>
         <textarea id="observaciones" name="observaciones" rows="3"></textarea>
 
@@ -77,9 +76,8 @@ include 'header.php';
     </form>
 
 <?php
-// Cerramos exactamente las dos cajas abiertas en el header (.profile-card y .container)
-echo '</div>'; // Cierra .profile-card
-echo '</div>'; // Cierra .container
+echo '</div>';
+echo '</div>';
 echo '</body>';
 echo '</html>';
 ?>
