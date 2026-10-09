@@ -89,7 +89,7 @@ $precio_total = $precio_base + $suplemento_dias;
 <!-- Botón estilizado -->
 <a href="index.php" class="btn">Realizar otra inscripción</a>
 
-</div> <!-- Cierra .profile-card -->
+</div>
 </div> <!-- Cierra .container -->
 </body>
 </html>
